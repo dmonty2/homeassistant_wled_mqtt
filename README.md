@@ -11,3 +11,6 @@ https://github.com/home-assistant/core/issues/90676
 
 One suggestion in the bug reports is to switch to MQTT which is not as polished.
 This might not resolve flashing white issue.
+
+I'm also disabling all Sync Interfaces except MQTT to see if this fixes the flashing.
+Will report back results after it has run for several days.
