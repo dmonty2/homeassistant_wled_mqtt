@@ -3,7 +3,7 @@ This is a configuration.yaml example for switching wled integragion to a mqtt cl
 
 Homeassistant's wled integration polls the controller too often causing it to flash white.
 Disabling Homeassistant's wled integration the flickering stops.  MQTT causes WLED
-to flash less less but it still does every once in a while..
+to flash less less.
 
 https://github.com/Aircoookie/WLED/issues/2480
 
