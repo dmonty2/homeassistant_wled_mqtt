@@ -6,24 +6,30 @@ mqtt:
         name: "Mantle Light"
         manufacturer: "Espressif Systems"
         model: "ESP8266 4MB"
-        connections: [["mac", "2c:f4:32:2b:a5:e2"]]
-        configuration_url: "http://192.168.0.11"
+        connections: [["mac", "2c:f4:32:2a:55:83"]]
+        configuration_url: "http://192.168.7.71"
       unique_id: "wled_mantle01"
-      state_topic: "wled/mantle/g"
+      availability_topic: "wled/mantle/status"
+      payload_available: "online"
+      payload_not_available: "offline"
+      state_topic: "wled/mantle/api"
+      payload_on: "T=1"
+      payload_off: "T=0"
       command_topic: "wled/mantle/api"
       rgb_state_topic: "wled/mantle/c"
       rgb_command_topic: "wled/mantle/col"
       brightness_command_topic: "wled/mantle"
       brightness_state_topic: "wled/mantle/g"
-      brightness_value_template: "{{value }} "
+      brightness_value_template: "{{ value }} "
       rgb_command_template: "{{ '#%02x%02x%02x' | format(red, green, blue)}}"
       rgb_value_template: "{{ value[1:3] | int(base=16) }},{{ value[3:5] | int(base=16) }},{{ value[5:7]| int(base=16) }}"
       qos: 2
       retain: true
-      optimistic: true
+      optimistic: false
       on_command_type: "first"
-      payload_on: "T=1"
-      payload_off: "T=0"
+      effect_command_topic: "wled/mantle/api"
+      effect_state_topic: "wled/mantle/api"
+      effect_value_template: "{{ value }}"
       effect_list:
         - "-- My Presets --"
         - "[PL=1]  Preset1"
