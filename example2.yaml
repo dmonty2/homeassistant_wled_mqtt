@@ -1,0 +1,404 @@
+
+# configuration.yaml
+mqtt:
+  - light:
+      device:
+        name: "ceiling"
+        manufacturer: "Espressif Systems"
+        model: "ESP8266 4MB"
+        connections: [["mac", "34:94:54:61:be:42"]]
+        configuration_url: "http://192.168.0.228"
+      unique_id: "ceiling"
+      availability_topic: "wled/mantle/status"
+      payload_available: "online"
+      payload_not_available: "offline"
+      state_topic: "wled/ceiling/api"
+      command_topic: "wled/ceiling/api"
+      rgb_state_topic: "wled/ceiling/c"
+      rgb_command_topic: "wled/ceiling/col"
+      brightness_command_topic: "wled/ceiling"
+      brightness_state_topic: "wled/ceiling/g"
+      brightness_value_template: "{{value }} "
+      rgb_command_template: "{{ '#%02x%02x%02x' | format(red, green, blue)}}"
+      rgb_value_template: "{{ value[1:3] | int(base=16) }},{{ value[3:5] | int(base=16) }},{{ value[5:7]| int(base=16) }}"
+      qos: 0
+      retain: true
+      optimistic: false
+      on_command_type: "first"
+      payload_on: "T=1"
+      payload_off: "T=0"
+      effect_list:
+      - "[FX=000] Solid"
+      - "[FX=103] Solid Glitter"
+      - "[FX=083] Solid Pattern"
+      - "[FX=084] Solid Pattern Tri"
+      - "[FX=186] Akemi"
+      - "[FX=027] Android"
+      - "[FX=038] Aurora"
+      - "[FX=183] Black Hole"
+      - "[FX=115] Blends"
+      - "[FX=001] Blink"
+      - "[FX=026] Blink Rainbow"
+      - "[FX=121] Blobs"
+      - "[FX=163] Blurz"
+      - "[FX=091] Bouncing Balls"
+      - "[FX=068] Bpm"
+      - "[FX=002] Breathe"
+      - "[FX=088] Candle"
+      - "[FX=102] Candle Multi"
+      - "[FX=028] Chase"
+      - "[FX=037] Chase 2"
+      - "[FX=054] Chase 3"
+      - "[FX=031] Chase Flash"
+      - "[FX=032] Chase Flash Rnd"
+      - "[FX=030] Chase Rainbow"
+      - "[FX=029] Chase Random"
+      - "[FX=111] Chunchun"
+      - "[FX=167] Colored Bursts"
+      - "[FX=034] Colorful"
+      - "[FX=008] Colorloop"
+      - "[FX=074] Colortwinkles"
+      - "[FX=067] Colorwaves"
+      - "[FX=119] Crazy Bees"
+      - "[FX=112] Dancing Shadows"
+      - "[FX=018] Dissolve"
+      - "[FX=019] Dissolve Rnd"
+      - "[FX=124] Distortion Waves"
+      - "[FX=159] DJ Light"
+      - "[FX=152] DNA"
+      - "[FX=182] DNA Spiral"
+      - "[FX=164] Drift"
+      - "[FX=123] Drift Rose"
+      - "[FX=096] Drip"
+      - "[FX=007] Dynamic"
+      - "[FX=117] Dynamic Smooth"
+      - "[FX=012] Fade"
+      - "[FX=049] Fairy"
+      - "[FX=051] Fairytwinkle"
+      - "[FX=069] Fill Noise"
+      - "[FX=066] Fire 2012"
+      - "[FX=045] Fire Flicker"
+      - "[FX=149] Firenoise"
+      - "[FX=042] Fireworks"
+      - "[FX=090] Fireworks 1D"
+      - "[FX=089] Fireworks Starburst"
+      - "[FX=110] Flow"
+      - "[FX=179] Flow Stripe"
+      - "[FX=155] Freqmap"
+      - "[FX=138] Freqmatrix"
+      - "[FX=141] Freqpixels"
+      - "[FX=137] Freqwave"
+      - "[FX=177] Frizzles"
+      - "[FX=160] Funky Plank"
+      - "[FX=172] Game Of Life"
+      - "[FX=139] GEQ"
+      - "[FX=120] Ghost Rider"
+      - "[FX=087] Glitter"
+      - "[FX=046] Gradient"
+      - "[FX=156] Gravcenter"
+      - "[FX=157] Gravcentric"
+      - "[FX=158] Gravfreq"
+      - "[FX=132] Gravimeter"
+      - "[FX=082] Halloween Eyes"
+      - "[FX=100] Heartbeat"
+      - "[FX=180] Hiphotic"
+      - "[FX=058] ICU"
+      - "[FX=064] Juggle"
+      - "[FX=130] Juggles"
+      - "[FX=168] Julia"
+      - "[FX=075] Lake"
+      - "[FX=041] Lighthouse"
+      - "[FX=057] Lightning"
+      - "[FX=176] Lissajous"
+      - "[FX=047] Loading"
+      - "[FX=131] Matripix"
+      - "[FX=153] Matrix"
+      - "[FX=154] Metaballs"
+      - "[FX=076] Meteor"
+      - "[FX=077] Meteor Smooth"
+      - "[FX=135] Midnoise"
+      - "[FX=059] Multi Comet"
+      - "[FX=070] Noise 1"
+      - "[FX=071] Noise 2"
+      - "[FX=146] Noise2D"
+      - "[FX=072] Noise 3"
+      - "[FX=073] Noise 4"
+      - "[FX=143] Noisefire"
+      - "[FX=136] Noisemeter"
+      - "[FX=145] Noisemove"
+      - "[FX=107] Noise Pal"
+      - "[FX=126] Octopus"
+      - "[FX=062] Oscillate"
+      - "[FX=101] Pacifica"
+      - "[FX=065] Palette"
+      - "[FX=098] Percent"
+      - "[FX=147] Perlin Move"
+      - "[FX=105] Phased"
+      - "[FX=109] Phased Noise"
+      - "[FX=128] Pixels"
+      - "[FX=129] Pixelwave"
+      - "[FX=097] Plasma"
+      - "[FX=178] Plasma Ball"
+      - "[FX=133] Plasmoid"
+      - "[FX=174] Polar Lights"
+      - "[FX=095] Popcorn"
+      - "[FX=063] Pride 2015"
+      - "[FX=144] Puddlepeak"
+      - "[FX=134] Puddles"
+      - "[FX=162] Pulser"
+      - "[FX=078] Railway"
+      - "[FX=043] Rain"
+      - "[FX=009] Rainbow"
+      - "[FX=033] Rainbow Runner"
+      - "[FX=005] Random Colors"
+      - "[FX=079] Ripple"
+      - "[FX=148] Ripple Peak"
+      - "[FX=099] Ripple Rainbow"
+      - "[FX=185] Rocktaves"
+      - "[FX=048] Rolling Balls"
+      - "[FX=015] Running"
+      - "[FX=052] Running Dual"
+      - "[FX=016] Saw"
+      - "[FX=010] Scan"
+      - "[FX=011] Scan Dual"
+      - "[FX=040] Scanner"
+      - "[FX=060] Scanner Dual"
+      - "[FX=122] Scrolling Text"
+      - "[FX=181] Sindots"
+      - "[FX=108] Sine"
+      - "[FX=092] Sinelon"
+      - "[FX=093] Sinelon Dual"
+      - "[FX=094] Sinelon Rainbow"
+      - "[FX=125] Soap"
+      - "[FX=118] Spaceships"
+      - "[FX=020] Sparkle"
+      - "[FX=022] Sparkle+"
+      - "[FX=021] Sparkle Dark"
+      - "[FX=085] Spots"
+      - "[FX=086] Spots Fade"
+      - "[FX=150] Squared Swirl"
+      - "[FX=039] Stream"
+      - "[FX=061] Stream 2"
+      - "[FX=023] Strobe"
+      - "[FX=025] Strobe Mega"
+      - "[FX=024] Strobe Rainbow"
+      - "[FX=166] Sun Radiation"
+      - "[FX=104] Sunrise"
+      - "[FX=006] Sweep"
+      - "[FX=036] Sweep Random"
+      - "[FX=175] Swirl"
+      - "[FX=173] Tartan"
+      - "[FX=044] Tetrix"
+      - "[FX=013] Theater"
+      - "[FX=014] Theater Rainbow"
+      - "[FX=035] Traffic Light"
+      - "[FX=056] Tri Fade"
+      - "[FX=055] Tri Wipe"
+      - "[FX=116] TV Simulator"
+      - "[FX=017] Twinkle"
+      - "[FX=081] Twinklecat"
+      - "[FX=080] Twinklefox"
+      - "[FX=106] Twinkleup"
+      - "[FX=050] Two Dots"
+      - "[FX=113] Washing Machine"
+      - "[FX=140] Waterfall"
+      - "[FX=165] Waverly"
+      - "[FX=184] Wavesins"
+      - "[FX=127] Waving Cell"
+      - "[FX=003] Wipe"
+      - "[FX=004] Wipe Random"
+      effect_command_topic: "wled/ceiling/api"
+      effect_state_topic: "wled/ceiling/api"
+      effect_value_template: "{{ value }}"
+
+input_select:
+  ceiling_presets:
+    options:
+      - "[PL=1]  Aurora"
+      - "[PL=2]  Aurora Running"
+      - "[PL=3]  Running"
+      - "[PL=4]  Pacifica"
+      - "[PL=5]  Flow"
+      - "[PL=6]  Running Hult"
+
+  ceiling_palette_list:
+    options:
+      - "[FP=00] Default"
+      - "[FP=02] * Color 1"
+      - "[FP=04] * Color Gradient"
+      - "[FP=03] * Colors 1&2"
+      - "[FP=05] * Colors Only"
+      - "[FP=01] * Random Cycle"
+      - "[FP=18] Analogous"
+      - "[FP=46] April Night"
+      - "[FP=63] Aqua Flash"
+      - "[FP=51] Atlantica"
+      - "[FP=50] Aurora"
+      - "[FP=55] Aurora 2"
+      - "[FP=39] Autumn"
+      - "[FP=22] Beach"
+      - "[FP=26] Beech"
+      - "[FP=67] Blink Red"
+      - "[FP=15] Breeze"
+      - "[FP=48] C9"
+      - "[FP=52] C9 2"
+      - "[FP=53] C9 New"
+      - "[FP=57] Candy"
+      - "[FP=70] Candy2"
+      - "[FP=07] Cloud"
+      - "[FP=37] Cyane"
+      - "[FP=24] Departure"
+      - "[FP=30] Drywet"
+      - "[FP=59] Fairy Reaf"
+      - "[FP=35] Fire"
+      - "[FP=10] Forest"
+      - "[FP=32] Grintage"
+      - "[FP=28] Hult"
+      - "[FP=29] Hult 64"
+      - "[FP=36] Icefire"
+      - "[FP=31] Jul"
+      - "[FP=25] Landscape"
+      - "[FP=08] Lava"
+      - "[FP=38] Light Pink"
+      - "[FP=65] Lite Light"
+      - "[FP=40] Magenta"
+      - "[FP=41] Magred"
+      - "[FP=09] Ocean"
+      - "[FP=47] Orangery"
+      - "[FP=44] Orange & Teal"
+      - "[FP=06] Party"
+      - "[FP=20] Pastel"
+      - "[FP=61] Pink Candy"
+      - "[FP=11] Rainbow"
+      - "[FP=12] Rainbow Bands"
+      - "[FP=16] Red & Blue"
+      - "[FP=66] Red Flash"
+      - "[FP=62] Red Reaf"
+      - "[FP=68] Red Shift"
+      - "[FP=69] Red Tide"
+      - "[FP=56] Retro Clown"
+      - "[FP=33] Rewhi"
+      - "[FP=14] Rivendell"
+      - "[FP=49] Sakura"
+      - "[FP=60] Semi Blue"
+      - "[FP=27] Sherbet"
+      - "[FP=19] Splash"
+      - "[FP=13] Sunset"
+      - "[FP=21] Sunset 2"
+      - "[FP=54] Temperature"
+      - "[FP=34] Tertiary"
+      - "[FP=45] Tiamat"
+      - "[FP=58] Toxy Reaf"
+      - "[FP=23] Vintage"
+      - "[FP=43] Yelblu"
+      - "[FP=64] Yelblu Hot"
+      - "[FP=17] Yellowout"
+      - "[FP=42] Yelmag"
+
+input_number:
+  ledspeed:
+    name: Speed
+    initial: 0
+    min: 0
+    max: 255
+    step: 1
+  ledintensity:
+    name: Intensity
+    initial: 0
+    min: 0
+    max: 255
+    step: 1
+
+# automation.yaml
+- id: '1707237558131'
+  alias: ceiling_speed
+  description: ''
+  trigger:
+  - entity_id: input_number.ledspeed
+    platform: state
+  condition: []
+  action:
+  - data_template:
+      topic: wled/ceiling/api
+      payload: SX={{ states('input_number.ledspeed') | int(128) }}
+    service: mqtt.publish
+  mode: single
+- id: '1707237679154'
+  alias: ceiling_intensity
+  description: ''
+  trigger:
+  - entity_id: input_number.ledintensity
+    platform: state
+  condition: []
+  action:
+  - data_template:
+      topic: wled/ceiling/api
+      payload: IX={{ states('input_number.ledintensity') | int(128) }}
+    service: mqtt.publish
+  mode: single
+- id: '1707237809780'
+  alias: ceiling_palette
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_select.ceiling_palette_list
+  condition: []
+  action:
+  - service: mqtt.publish
+    data_template:
+      topic: wled/ceiling/api
+      payload: '{{ states(''input_select.ceiling_palette_list'') }}'
+  mode: single
+- id: '1707237869749'
+  alias: ceiling_presets
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_select.ceiling_presets
+  condition: []
+  action:
+  - service: mqtt.publish
+    data_template:
+      topic: wled/ceiling/api
+      payload: '{{ states(''input_select.ceiling_presets'') }}'
+  mode: single
+
+  # lovelace-UI
+  cards:
+  - shorten_cards: true
+    consolidate_entities: false
+    child_card: false
+    hide_header: false
+    show_header_icon: true
+    header: Ceiling
+    color_wheel: true
+    persist_features: false
+    brightness: true
+    color_temp: false
+    white_value: false
+    color_picker: true
+    speed: true
+    intensity: true
+    force_features: false
+    show_slider_percent: false
+    full_width_sliders: false
+    brightness_icon: weather-sunny
+    white_icon: file-word-box
+    temperature_icon: thermometer
+    speed_icon: speedometer
+    intensity_icon: transit-connection-horizontal
+    entity: light.ceiling_mqtt_lightentity
+    type: custom:light-entity-card
+  - entities:
+      - input_number.ledspeed
+      - input_number.ledintensity
+    type: entities
+  - cards:
+      - entities:
+          - input_select.ceiling_palette_list
+        type: entities
+      - entities:
+          - input_select.ceiling_presets
+        type: entities
+    type: horizontal-stack
+type: vertical-stack
