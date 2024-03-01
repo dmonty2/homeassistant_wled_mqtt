@@ -1,16 +1,14 @@
 # homeassistant_wled_mqtt
 This is a configuration.yaml example for switching wled integragion to a mqtt client.
 
-Homeassistant's wled integration polls the controller too often causing it to flash white.
-Disabling Homeassistant's wled integration the flickering stops.  MQTT causes WLED
-to flash less less.
+This is an attempt to resolve an issue where the WLED light strip randomly flashes.
+One suggestion was to disable Homeassistant's wled integration polls too often and causing flashes.
+MQTT may reduce WLED flashing.
 
 https://github.com/Aircoookie/WLED/issues/2480
 
 https://github.com/home-assistant/core/issues/90676
 
-One suggestion in the bug reports is to switch to MQTT which is not as polished.
-This might not resolve flashing white issue.
+I found disabling "automatic brightness limiter" under "LED Preferences" helped reduce flashing.
 
-I'm also disabling all Sync Interfaces except MQTT to see if this fixes the flashing.
-Will report back results after it has run for several days.
+Tried disabling all Sync Interfaces except MQTT this did not fix flashing.
